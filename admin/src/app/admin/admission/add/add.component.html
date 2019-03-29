@@ -1,0 +1,265 @@
+<!-- page content -->
+       <div class="right_col" role="main">
+         <div class="">
+           <div class="page-title">
+             <div class="title_left">
+               <h3>Form Elements</h3>
+             </div>
+
+             <div class="title_right">
+               <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                 <div class="input-group">
+                   <input type="text" class="form-control" placeholder="Search for...">
+                   <span class="input-group-btn">
+                     <button class="btn btn-default" type="button">Go!</button>
+                   </span>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="clearfix"></div>
+           <div class="row">
+             <div class="col-md-12 col-sm-12 col-xs-12">
+               <div class="x_panel">
+                 <div class="x_title">
+                   <h2>Form Design <small>different form elements</small></h2>
+                   <ul class="nav navbar-right panel_toolbox">
+                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                     </li>
+                     <li class="dropdown">
+                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                       <ul class="dropdown-menu" role="menu">
+                         <li><a href="#">Settings 1</a>
+                         </li>
+                         <li><a href="#">Settings 2</a>
+                         </li>
+                       </ul>
+                     </li>
+                     <li><a class="close-link"><i class="fa fa-close"></i></a>
+                     </li>
+                   </ul>
+                   <div class="clearfix"></div>
+                 </div>
+                 <div class="x_content">
+                   <br />
+                   <form [formGroup]="admissionForm" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                     <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="control-label" for="first-name">First Name <span class="required">*</span>
+                          </label>
+                            <input [class.has-error]="firstName.invalid && firstName.touched" type="text" formControlName="firstName" id="first-name" required="required" class="form-control col-md-7 col-xs-12" />
+                            <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+                                class="alert alert-danger">First Name is required.
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="control-label" for="first-name">Middle Name <span class="required">*</span>
+                          </label>
+                            <input type="text" formControlName="middleName" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="control-label" for="first-name">Last Name <span class="required">*</span>
+                          </label>
+                            <input type="text" formControlName="lastName" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                     </div>
+                     <div class="row">
+                       <div class="col-md-3">
+                         <label class="control-label" for="first-name">DOB <span class="required">*</span>
+                         </label>
+                           <input [class.has-error]="dob.invalid && dob.touched" type="date" formControlName="dob" id="dob" required="required" class="form-control col-md-7 col-xs-12">
+                           <div *ngIf="dob.invalid && (dob.dirty || dob.touched)"
+                               class="alert alert-danger">Please select DOB.
+                           </div>
+                       </div>
+                       <div class="col-md-3">
+                         <label class="control-label" for="first-name">Gender <span class="required">*</span>
+                         </label>
+                         <select [class.has-error]="gender.invalid && gender.touched" formControlName="gender" class="form-control">
+                            <option>Choose option</option>
+                            <option *ngFor="let dataType of genders;" [ngValue]="dataType">{{dataType}}
+                            </option>
+                          </select>
+                          <div *ngIf="gender.invalid && (gender.dirty || gender.touched)"
+                              class="alert alert-danger">Please select gender.
+                          </div>
+                       </div>
+                       <div class="col-md-3">
+                         <label class="control-label" for="first-name">Religion <span class="required">*</span>
+                         </label>
+                         <select [class.has-error]="religion.invalid && religion.touched" formControlName="gender" formControlName="religion" class="form-control">
+                            <option>Choose option</option>
+                            <option *ngFor="let dataType of religions;" [ngValue]="dataType">{{dataType}}
+                            </option>
+                          </select>
+                          <div *ngIf="religion.invalid && (religion.dirty || religion.touched)"
+                              class="alert alert-danger">Please select Religion.
+                          </div>
+                       </div>
+                       <div class="col-md-3">
+                         <label class="control-label" for="first-name">Nationality <span class="required">*</span>
+                         </label>
+                         <select [class.has-error]="nationality.invalid && nationality.touched" formControlName="nationality" class="form-control">
+                            <option>Choose option</option>
+                            <option *ngFor="let dataType of countries;" [ngValue]="dataType">{{dataType}}
+                            </option>
+                        </select>
+                        <div *ngIf="nationality.invalid && (nationality.dirty || nationality.touched)"
+                            class="alert alert-danger">Please select Nationality.
+                        </div>
+                       </div>
+                     </div>
+                     <div class="row">
+                       <div class="col-md-4">
+                         <label class="control-label" for="first-name">Class <span class="required">*</span>
+                         </label>
+                          <select [class.has-error]="class.invalid && class.touched" formControlName="class" class="form-control">
+                              <option>Choose option</option>
+                              <option *ngFor="let dataType of classArray;" [ngValue]="dataType">{{dataType}}
+                              </option>
+                          </select>
+                          <div *ngIf="class.invalid && (class.dirty || class.touched)"
+                              class="alert alert-danger">Please select Class.
+                          </div>
+                       </div>
+                       <div class="col-md-4">
+                         <label class="control-label" for="first-name">Section <span class="required">*</span>
+                         </label>
+                         <select [class.has-error]="section.invalid && section.touched" formControlName="section" class="form-control">
+                             <option>Choose option</option>
+                             <option *ngFor="let dataType of sections;" [ngValue]="dataType">{{dataType}}
+                             </option>
+                         </select>
+                         <div *ngIf="section.invalid && (section.dirty || section.touched)"
+                             class="alert alert-danger">Please select Class.
+                         </div>
+                       </div>
+                       <div class="col-md-4">
+                         <label class="control-label" for="first-name">Branch <span class="required">*</span>
+                         </label>
+                         <select [class.has-error]="branch.invalid && branch.touched" formControlName="branch" class="form-control">
+                             <option>Choose option</option>
+                             <option *ngFor="let dataType of branches;" [ngValue]="dataType._id">{{dataType.branchName}}
+                             </option>
+                         </select>
+                         <div *ngIf="branch.invalid && (branch.dirty || branch.touched)"
+                             class="alert alert-danger">Please select Branch.
+                         </div>
+                       </div>
+                     </div>
+                     <br>
+                     <div class="panel panel-default">
+                       <div class = "panel-heading">
+                          Previous School Details
+                       </div>
+                       <div class="panel-body row">
+                         <div class="col-md-4">
+                           <div class="form-group">
+                             <label class="control-label" for="first-name">School Name <span class="required">*</span>
+                             </label>
+                               <input type="text" formControlName="previousSchool" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                           </div>
+                         </div>
+                         <div class="col-md-6">
+                           <div class="form-group">
+                             <label class="control-label" for="first-name">School Address <span class="required">*</span>
+                             </label>
+                               <input type="text" formControlName="previousSchoolAddress" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                           </div>
+                         </div>
+                         <div class="col-md-2">
+                           <div class="form-group">
+                             <label class="control-label" for="first-name">Class Name<span class="required">*</span>
+                             </label>
+                               <input type="text" formControlName="previousClass" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="panel panel-default">
+                       <div class = "panel-heading">
+                          Sibling Details
+                       </div>
+                       <div class="panel-body" formArrayName="sibling">
+                         <div *ngFor="let data of siblingFormGroup.controls; let i = index;">
+                           <div [formGroupName]="i" class="row">
+                             <div class="col-md-4">
+                               <div class="form-group">
+                                 <label class="control-label" for="first-name">Name <span class="required">*</span>
+                                 </label>
+                                   <input type="text" formControlName="name" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                               </div>
+                             </div>
+                             <div class="col-md-2">
+                               <div class="form-group">
+                                 <label class="control-label" for="first-name">Class <span class="required">*</span>
+                                 </label>
+                                   <input type="text" formControlName="class" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                               </div>
+                             </div>
+                             <div class="col-md-4">
+                               <div class="form-group">
+                                 <label class="control-label" for="first-name">School <span class="required">*</span>
+                                 </label>
+                                   <input type="text" formControlName="school" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                               </div>
+                             </div>
+                             <div class="col-md-2">
+                               <label></label>
+                               <button [className]="'add-more'" (click)="removeSibling()"><i class="fa fa-trash-o" style="font-size:24px;color:red"></i></button>
+                             </div>
+                           </div>
+                         </div>
+                         <div class="row">
+                           <div class="col-md-12 add-more">
+                             <button class="btn btn-primary" (click)="addSibling()">Add More</button>
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="row">
+                       <div class="col-md-6">
+                         <div class="form-group">
+                           <label class="control-label" for="aadhaar">Aadhar <span class="required">*</span>
+                           </label>
+                             <input [class.has-error]="aadhar.invalid && aadhar.touched" type="text" formControlName="aadhar" id="aadhar" required="required" class="form-control col-md-7 col-xs-12" />
+                             <div *ngIf="aadhar.invalid && (aadhar.dirty || aadhar.touched)"
+                                 class="alert alert-danger">Please select Aadhar.
+                             </div>
+                         </div>
+                       </div>
+                       <div class="col-md-6">
+                         <div class="form-group">
+                           <label class="control-label" for="first-name">Image <span class="required">*</span>
+                           </label>
+                             <input formControlName="studentImage" type="file" (change)="onFileChange($event)" />
+                             <div *ngIf="studentImage.invalid && (studentImage.dirty || studentImage.touched)"
+                                 class="alert alert-danger">Please select Student Image.
+                             </div>
+                         </div>
+                       </div>
+                     </div>
+
+                     <div class="ln_solid"></div>
+                     <div class="form-group">
+                       <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                         <button class="btn btn-primary" type="button">Cancel</button>
+                         <button class="btn btn-primary" type="reset">Reset</button>
+                         <button type="submit" [disabled]="!admissionForm.valid" class="btn btn-success" (click)="onSubmit()">Submit</button>
+                       </div>
+                     </div>
+
+                   </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+       <!-- /page content -->

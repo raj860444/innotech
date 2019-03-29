@@ -1,0 +1,28 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<ng-container *ngIf="login;else second">
+  <div class="container body">
+        <div class="main_container">
+          <div class="col-md-3 left_col">
+            <div class="left_col scroll-view">
+              <div class="navbar nav_title" style="border: 0;">
+                <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Innotech</span></a>
+              </div>
+              <div class="clearfix"></div>
+              <app-sidenav></app-sidenav>
+              <!-- sidebar menu -->
+            </div>
+          </div>
+          <app-topnav></app-topnav>
+
+          <router-outlet></router-outlet>
+          <!-- footer content -->
+          <footer>
+            <app-footer></app-footer>
+          </footer>
+          <!-- /footer content -->
+        </div>
+      </div>
+</ng-container>
+<ng-template #second>
+  <router-outlet></router-outlet>
+</ng-template>

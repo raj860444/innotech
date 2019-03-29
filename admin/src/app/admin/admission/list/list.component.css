@@ -1,0 +1,9 @@
+.last > a {
+      margin-right: 20px;
+}
+
+.ngx-pagination {
+    margin-left: 0;
+    margin-bottom: 1rem;
+    float: right !important;
+}

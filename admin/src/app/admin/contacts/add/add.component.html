@@ -1,0 +1,369 @@
+
+       <div class="right_col" role="main">
+         <div class="">
+           <div class="page-title">
+             <div class="title_left">
+               <h3>Form Elements</h3>
+             </div>
+
+             <div class="title_right">
+               <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                 <div class="input-group">
+                   <input type="text" class="form-control" placeholder="Search for...">
+                   <span class="input-group-btn">
+                     <button class="btn btn-default" type="button">Go!</button>
+                   </span>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="clearfix"></div>
+           <div class="row">
+             <div class="col-md-12 col-sm-12 col-xs-12">
+               <div class="x_panel">
+                 <div class="x_title">
+                   <h2>Form Design <small>different form elements</small></h2>
+                   <ul class="nav navbar-right panel_toolbox">
+                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                     </li>
+                     <li class="dropdown">
+                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                       <ul class="dropdown-menu" role="menu">
+                         <li><a href="#">Settings 1</a>
+                         </li>
+                         <li><a href="#">Settings 2</a>
+                         </li>
+                       </ul>
+                     </li>
+                     <li><a class="close-link"><i class="fa fa-close"></i></a>
+                     </li>
+                   </ul>
+                   <div class="clearfix"></div>
+                 </div>
+                 <div class="x_content">
+                   <br />
+                   <form [formGroup]="contactsForm" data-parsley-validate class="form-horizontal form-label-left" (ngSubmit)="onSubmit()">
+                     <div class="form-group">
+                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Contact Type <span class="required">*</span>
+                         </label>
+                         <div class="col-md-6 col-sm-6 col-xs-12">
+                           <input type="radio" formControlName="customerType" value="Customer" /><label for="">Customer</label>
+                           <input type="radio" formControlName="customerType" value="Vendor" /><label for="">Vendor</label>
+                         </div>
+                    </div>
+                     <div class="form-group">
+                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Primary Contact <span class="required">*</span>
+                       </label>
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                         <div class="row">
+                             <div class="col-md-2">
+                               <select class="form-control" formControlName="salutation">
+                                  <option value="">Salutation</option>
+                                  <option value="Mr.">Mr.</option>
+                                  <option value="Mrs.">Mrs.</option>
+                                  <option value="Ms.">Ms.</option>
+                                  <option value="Miss.">Miss</option>
+                                  <option value="Dr.">Dr. </option>
+                                </select>
+                             </div>
+                             <div class="col-md-5">
+                                 <input type="text"  formControlName="firstName" required="required" class="form-control" placeholder="First Name">
+                             </div>
+                             <div class="col-md-5">
+                                 <input type="text" formControlName="lastName" required="required" class="form-control" placeholder="Last Name">
+                             </div>
+                          </div>
+                       </div>
+                     </div>
+                     <div class="form-group">
+                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Company Name <span class="required">*</span>
+                       </label>
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                         <input type="text" formControlName="companyName" required="required" class="form-control col-md-7 col-xs-12" placeholder="Company Name">
+                       </div>
+                     </div>
+                     <div class="form-group">
+                       <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Contact Display Name *</label>
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                         <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" formControlName="contactDisplayName" placeholder="Contact Display Name">
+                       </div>
+                     </div>
+                     <div class="form-group">
+                       <label class="control-label col-md-3 col-sm-3 col-xs-12">Contact Email <span class="required">*</span>
+                       </label>
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                         <input  formControlName="contactEmail" class="form-control col-md-7 col-xs-12" required="required" type="text" placeholder="Contact Email">
+                       </div>
+                     </div>
+                     <div class="form-group">
+                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Contact Phone<span class="required">*</span>
+                       </label>
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                         <div class="row">
+                             <div class="col-md-4">
+                                 <input type="text" formControlName="workPhone" required="required" class="form-control" placeholder="Work Phone">
+                             </div>
+                             <div class="col-md-4">
+                                 <input type="text" formControlName="mobile" required="required" class="form-control" placeholder="Mobile">
+                             </div>
+                             <div class="col-md-4">
+                              <a href="#">Add more fields</a>
+                             </div>
+                          </div>
+                       </div>
+                     </div>
+                     <div class="form-group">
+                       <label class="control-label col-md-3 col-sm-3 col-xs-12">Skype Name/Number <span class="required">*</span>
+                       </label>
+                       <div class="col-md-6 col-sm-6 col-xs-12 input-group">
+                         <span class="input-group-addon" id="basic-addon1"><i class="fa fa-skype" style="color:#00aff0"></i></span>
+                         <input formControlName="skypeId" class="form-control col-md-7 col-xs-12" required="required" type="text">
+                       </div>
+                     </div>
+                     <div class="form-group">
+                       <label class="control-label col-md-3 col-sm-3 col-xs-12">Designation <span class="required">*</span>
+                       </label>
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                         <input formControlName="designation"  class="form-control col-md-7 col-xs-12" required="required" type="text" placeholder="Designation">
+                       </div>
+                     </div>
+                     <div class="form-group">
+                       <label class="control-label col-md-3 col-sm-3 col-xs-12">Department <span class="required">*</span>
+                       </label>
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                         <input formControlName="department"  class="form-control col-md-7 col-xs-12" required="required" type="text" placeholder="Department">
+                       </div>
+                     </div>
+                     <div class="form-group">
+                       <label class="control-label col-md-3 col-sm-3 col-xs-12">Website <span class="required">*</span>
+                       </label>
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                         <input formControlName="website"  class="form-control col-md-7 col-xs-12" required="required" type="text" placeholder="Website">
+                       </div>
+                     </div>
+                     <div class="ln_solid"></div>
+                     <div class="x_content">
+                       <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                           <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                               <li role="presentation" class="active">
+                                  <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Tax & Payment Details</a>
+                               </li>
+                               <li role="presentation" class="">
+                                 <a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Address</a>
+                               </li>
+                               <li role="presentation" class="">
+                                 <a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Custom Fields</a>
+                               </li>
+                               <li role="presentation" class="">
+                                 <a href="#tab_content4" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Notes</a>
+                               </li>
+                           </ul>
+                           <div id="myTabContent" class="tab-content">
+                               <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+                                 <div class="form-group">
+                                   <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Currency *</label>
+                                   <div class="col-md-6 col-sm-6 col-xs-12">
+                                     <select class="form-control" formControlName="currency" >
+                                      <option value="">Choose Currency</option>
+                                      <option value="CNY- Yuan Renminbi">CNY- Yuan Renminbi</option>
+                                      <option value="AED- UAE Dirham">AED- UAE Dirham</option>
+                                    </select>
+                                   </div>
+                                 </div>
+                                 <div class="form-group">
+                                   <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Payment Terms *</label>
+                                   <div class="col-md-6 col-sm-6 col-xs-12">
+                                     <select class="form-control" formControlName="paymentTerms">
+                                      <option value="">Option one</option>
+                                      <option value="Due On Receipt">Due On Receipt</option>
+                                      <option value="Net 15">Net 15</option>
+                                      <option value="Net 30">Net 30</option>
+                                    </select>
+                                   </div>
+                                 </div>
+                                 <div class="form-group">
+                                   <label class="control-label col-md-3 col-sm-3 col-xs-12">Facebook <span class="required">*</span>
+                                   </label>
+                                   <div class="col-md-6 col-sm-6 col-xs-12 input-group">
+                                     <span class="input-group-addon" id="basic-addon1"><i class="fa fa-facebook-official" style="color:#3b5998"></i></span>
+                                     <input formControlName="facebookId" class="form-control col-md-7 col-xs-12" required="required" type="text">
+                                   </div>
+                                 </div>
+                                 <div class="form-group">
+                                   <label class="control-label col-md-3 col-sm-3 col-xs-12">Twitter <span class="required">*</span>
+                                   </label>
+                                   <div class="col-md-6 col-sm-6 col-xs-12 input-group">
+                                     <span class="input-group-addon" id="basic-addon1"><i class="fa fa-twitter-square" style="color:#55acee"></i></span>
+                                     <input formControlName="twitterId" class="form-control col-md-7 col-xs-12" required="required" type="text">
+                                   </div>
+                                 </div>
+                               </div>
+                               <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+                                   <div class="row">
+                                      <div class="col-md-6">
+                                        <div class="panel panel-default" formGroupName="billingAddress">
+                                            <div class="panel-body">
+                                              Billing Address
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="control-label col-md-3 col-sm-3 col-xs-12">Attention <span class="required">*</span>
+                                              </label>
+                                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input formControlName="attention"  class="form-control col-md-7 col-xs-12" required="required" type="text" placeholder="Attention">
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="control-label col-md-3 col-sm-3 col-xs-12">Address <span class="required">*</span>
+                                              </label>
+                                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <textarea formControlName="street" class="form-control" rows="3" placeholder="Address"></textarea>
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="control-label col-md-3 col-sm-3 col-xs-12">City <span class="required">*</span>
+                                              </label>
+                                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input formControlName="city"  class="form-control col-md-7 col-xs-12" required="required" type="text" placeholder="City">
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="control-label col-md-3 col-sm-3 col-xs-12">State <span class="required">*</span>
+                                              </label>
+                                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input formControlName="state" class="form-control col-md-7 col-xs-12" required="required" type="text" placeholder="State">
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="control-label col-md-3 col-sm-3 col-xs-12">Zip Code <span class="required">*</span>
+                                              </label>
+                                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input formControlName="zip" class="form-control col-md-7 col-xs-12" required="required" type="text" placeholder="Zip Code">
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="control-label col-md-3 col-sm-3 col-xs-12">Country <span class="required">*</span>
+                                              </label>
+                                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input formControlName="country"  class="form-control col-md-7 col-xs-12" required="required" type="text" placeholder="Country">
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="control-label col-md-3 col-sm-3 col-xs-12">Fax <span class="required">*</span>
+                                              </label>
+                                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input formControlName="fax" class="form-control col-md-7 col-xs-12" required="required" type="text" placeholder="Fax">
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="control-label col-md-3 col-sm-3 col-xs-12">Phone <span class="required">*</span>
+                                              </label>
+                                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input formControlName="phone" class="form-control col-md-7 col-xs-12" required="required" type="text" placeholder="Phone">
+                                              </div>
+                                            </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <div class="panel panel-default" formGroupName="shippingAddress">
+                                            <div class="panel-body">
+                                              Shipping Address
+                                              <a href="#" style="float:right"><i class="fa fa-arrow-down"></i> Copy billing address</a>
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="control-label col-md-3 col-sm-3 col-xs-12">Attention <span class="required">*</span>
+                                              </label>
+                                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input formControlName="attention" class="form-control col-md-7 col-xs-12" required="required" type="text" placeholder="Attention">
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="control-label col-md-3 col-sm-3 col-xs-12">Address <span class="required">*</span>
+                                              </label>
+                                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <textarea formControlName="street" class="form-control" rows="3" placeholder="Address"></textarea>
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="control-label col-md-3 col-sm-3 col-xs-12">City <span class="required">*</span>
+                                              </label>
+                                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input formControlName="city" class="form-control col-md-7 col-xs-12" required="required" type="text" placeholder="City">
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="control-label col-md-3 col-sm-3 col-xs-12">State <span class="required">*</span>
+                                              </label>
+                                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input formControlName="state" class="form-control col-md-7 col-xs-12" required="required" type="text" placeholder="State">
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="control-label col-md-3 col-sm-3 col-xs-12">Zip Code <span class="required">*</span>
+                                              </label>
+                                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input formControlName="zip" class="form-control col-md-7 col-xs-12" required="required" type="text" placeholder="Zip Code">
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="control-label col-md-3 col-sm-3 col-xs-12">Country <span class="required">*</span>
+                                              </label>
+                                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input formControlName="country" class="form-control col-md-7 col-xs-12" required="required" type="text" placeholder="Country">
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="control-label col-md-3 col-sm-3 col-xs-12">Fax <span class="required">*</span>
+                                              </label>
+                                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input formControlName="fax" class="form-control col-md-7 col-xs-12" required="required" type="text" placeholder="Fax">
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="control-label col-md-3 col-sm-3 col-xs-12">Phone <span class="required">*</span>
+                                              </label>
+                                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input formControlName="phone" class="form-control col-md-7 col-xs-12" required="required" type="text" placeholder="Phone">
+                                              </div>
+                                            </div>
+                                          </div>
+                                      </div>
+                                    </div>
+                               </div>
+                               <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
+                                   <p><b>Start adding custom fields for your contacts by going to More Settings <i class="fa fa-arrow-right"></i> Preferences  <i class="fa fa-arrow-right"></i>Contacts. You can add as many as Ten extra fields, as well as refine the address format of your contacts from there. </b></p>
+                               </div>
+                               <div role="tabpanel" class="tab-pane fade" id="tab_content4" aria-labelledby="profile-tab">
+                                 <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Notes (For Internal Use) <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <textarea class="form-control" rows="3" formControlName="notes"></textarea>
+                                    </div>
+                                  </div>
+                               </div>
+                           </div>
+                       </div>
+                 </div>
+                     <div class="form-group">
+                       <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                         <button class="btn btn-primary" type="button">Cancel</button>
+                         <button class="btn btn-primary" type="reset">Reset</button>
+                         <button type="submit" [disabled]="!contactsForm.valid" class="btn btn-success">Submit</button>
+                       </div>
+                     </div>
+                   </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+
+
+
+
+
+
+
+         </div>
+       </div>
+       <!-- /page content -->

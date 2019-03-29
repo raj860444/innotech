@@ -1,0 +1,38 @@
+<div>
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+          <section class="login_content">
+            <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+              <h1>Login Form</h1>
+              <div>
+                <input type="text" formControlName="email" class="form-control" id="email" placeholder="Username" required="" />
+              </div>
+              <div>
+                <input type="password" formControlName="password" class="form-control" id="password" placeholder="Password" required="" />
+              </div>
+              <div>
+                <!-- <button type="submit" class="btn btn-default submit">Log in</button> -->
+                <button type="submit" [disabled]="!loginForm.valid" class="btn btn-default submit">Log in</button>
+                <a class="reset_pass" routerLink="/forgot-password">Lost your password?</a>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                
+
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+                  <h1><i class="fa fa-paw"></i> Innotech</h1>
+                  <p>©2016 All Rights Reserved.</p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+
+
+      </div>
+    </div>

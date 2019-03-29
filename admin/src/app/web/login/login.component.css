@@ -1,0 +1,66 @@
+/* login section css start here */
+#loginid .panel-default>.panel-heading {
+    color:white;
+    background-color: #337ab7;
+    border-color: #ddd;
+}
+
+#loginid{
+    min-height: 625px;
+    padding:70px;
+background: -webkit-linear-gradient(to right, #e9e4f012, #d3cce32e);
+background: -moz-linear-gradient(to right, #e9e4f012, #d3cce32e);
+background: linear-gradient(to right, #e9e4f012, #d3cce32e);
+}
+
+
+#login-box{
+    max-width: 500px;
+    min-width: 250px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+
+#loginid h2 {
+     color: white;
+    text-align: center;
+    margin: 0px;
+    font-size:20px;
+    font-family: serif;
+}
+
+
+ .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+ .social-buttons{
+    margin:12px 0    
+}
+ .social-buttons a{
+    width: 49%;
+}
+ .form-group {
+    margin-bottom: 10px;
+}
+.btn-fb{
+    color: #fff;
+    background-color:#3b5998;
+}
+.btn-fb:hover{
+    color: #fff;
+    background-color:#496ebc 
+}
+.btn-tw{
+    color: #fff;
+    background-color:#55acee;
+}
+.btn-tw:hover{
+    color: #fff;
+    background-color:#59b5fa;
+}
+
+/* login section css start here */

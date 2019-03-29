@@ -1,0 +1,102 @@
+<!-- page content -->
+       <div class="right_col" role="main">
+         <div class="">
+           <div class="page-title">
+             <div class="title_left">
+               <h3>All Students</h3>
+             </div>
+
+             <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                      <select class="form-control" #class (change)="setClassName(class.value)">
+                          <option>Choose Class</option>
+                          <option *ngFor="let dataType of classArray;" [ngValue]="dataType">{{dataType}}
+                          </option>
+                      </select>
+                </div>
+                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                       <select class="form-control" #section (change)="setSectionName(section.value)">
+                           <option>Choose Section</option>
+                           <option *ngFor="let dataType of sections;" [ngValue]="dataType">{{dataType}}
+                           </option>
+                       </select>
+                </div>
+               <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                 <div class="input-group">
+                   <input type="text" class="form-control" placeholder="Search for...">
+                   <span class="input-group-btn">
+                     <button class="btn btn-default" type="button">Go!</button>
+                   </span>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="clearfix"></div>
+           <div class="row">
+             <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>All Students <small>Custom design</small></h2>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="x_content">
+                        <div class="table-responsive">
+                            <table class="table table-striped jambo_table bulk_action">
+                                <thead>
+                                    <tr class="headings">
+                                        <th>
+                                          <input type="checkbox" id="check-all" class="flat">
+                                        </th>
+                                        <th class="column-title" style="display: table-cell;">Name </th>
+                                        <th class="column-title" style="display: table-cell;">DOB </th>
+                                        <th class="column-title" style="display: table-cell;">Gender </th>
+                                        <th class="column-title" style="display: table-cell;">Class </th>
+                                        <th class="column-title" style="display: table-cell;">Section </th>
+                                        <th class="column-title" style="display: table-cell;">Branch </th>
+                                        <th class="column-title" style="display: table-cell;">Aadhar </th>
+                                        <th class="column-title" style="display: table-cell;">Image </th>
+                                        <th class="column-title no-link last" style="display: table-cell;"><span class="nobr">Action</span>
+                                        </th>
+                                        <th class="bulk-actions" colspan="7" style="display: none;">
+                                            <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt">1 Records Selected</span> ) <i class="fa fa-chevron-down"></i></a>
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr class="even pointer" *ngFor="let listItem of admissions | paginate: { itemsPerPage: 2, currentPage: p }">
+                                        <td class="a-center ">
+                                            <input type="checkbox"  name="{{ listItem._id }}" style="position: absolute;">
+                                        </td>
+                                        <td class=" ">{{ listItem.result.firstName }} {{ listItem.result.lastName }}</td>
+                                        <td class=" ">{{ listItem.result.dob }}</td>
+                                        <td class=" ">{{ listItem.result.gender }}</td>
+                                        <td class=" ">{{ listItem.result.class }}</td>
+                                        <td class=" ">{{ listItem.result.section }}</td>
+                                        <td class=" ">{{ listItem.result.branch.branchName }}</td>
+                                        <td class=" ">{{ listItem.result.aadhar }}</td>
+                                        <td class=" ">
+                                          <div class="profile clearfix"><div class="profile_pic">
+                                            <img src="{{ listItem.result.studentImageName }}"  class="img-circle profile_img"/>
+                                          </div></div>
+                                        </td>
+                                        <td [class]="'last'">
+                                          <a [routerLink]="['/admin/admission/view', listItem.result._id]"><i class="fa fa-eye"></i></a>
+                                          <a [routerLink]="['/admin/admission/edit', listItem.result._id]"><i class="fa fa-edit"></i></a>
+                                          <a (click)="deleteAdmisson(listItem.result._id)"><i class="fa fa-trash-o"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr><td colspan="10"><pagination-controls (pageChange)="p = $event" [class]="'ngx-pagination'"></pagination-controls></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+           </div>
+         </div>
+       </div>
+       <!-- /page content -->
